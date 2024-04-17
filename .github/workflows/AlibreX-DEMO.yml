@@ -1,0 +1,23 @@
+# DEMO
+name: .NET Framework App Build and Test
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Setup MSBuild path
+      uses: microsoft/setup-msbuild@v1.1
+    - name: Restore NuGet packages
+      run: |
+        # Using MSBuild to restore NuGet packages
+        msbuild -t:restore
+    - name: Build project
+      run: |
+        # Building the project using MSBuild
+        # Assuming you're targeting the .NET Framework 4.8,
+        # and the solution file is in the root directory.
+        msbuild /p:Configuration=Release /p:TargetFrameworkVersion=v4.8 /p:RestorePackages=false
