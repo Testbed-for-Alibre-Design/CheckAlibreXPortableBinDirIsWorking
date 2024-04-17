@@ -1,7 +1,7 @@
 ﻿using System; // Include the System namespace for basic system functions
 using System.IO; // Include the System.IO namespace for file operations
 using AlibreX; // Include the AlibreX namespace for interfacing with Alibre CAD software
-namespace MyCLIApp // Define a namespace for our application
+namespace CheckAlibreXPortableBinDirIsWorking // Define a namespace for our application
 {
     class Program // Declare a class named 'Program'
     {
