@@ -7,11 +7,32 @@
 
   <ItemGroup>
     <Reference Include="AlibreX">
-      <HintPath>..\..\..\..\Program Files\Alibre Design 27.0.1.27039\Program\AlibreX.dll</HintPath>
+
+      <HintPath Condition="Exists('AlibreX.dll')">
+        AlibreX.dll
+      </HintPath>
+      
+      <HintPath Condition="Exists('..\..\..\..\Program Files\Alibre Design 27.0.1.27039\Program\AlibreX.dll')">
+        ..\..\..\..\Program Files\Alibre Design 27.0.1.27039\Program\AlibreX.dll
+      </HintPath>
+      <HintPath Condition="Exists('C:\Program Files\Alibre Design 27.0.1.27039\Program\AlibreX.dll')">
+        C:\Program Files\Alibre Design 27.0.1.27039\Program\AlibreX.dll
+      </HintPath>
+
+      <HintPath Condition="Exists('..\..\..\..\Program Files\Alibre Design 28.0.1.28098\Program\AlibreX.dll')">
+        ..\..\..\..\Program Files\Alibre Design 28.0.1.28098\Program\AlibreX.dll
+      </HintPath>
+      <HintPath Condition="Exists('C:\Program Files\Alibre Design 28.0.1.28098\Program\AlibreX.dll')">
+        C:\Program Files\Alibre Design 28.0.1.28098\Program\AlibreX.dll
+      </HintPath>
+      
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="AlibreX.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="test.AD_PRT">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
